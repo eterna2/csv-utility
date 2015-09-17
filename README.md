@@ -23,7 +23,7 @@ var result = csvUtility.guessCSV(sample,{
 });
 ```
 
-### Browser
+#### Browser
 ```
 var result = csvUtility.guessCSV(sample,{
   linebreak: [';'],
@@ -46,7 +46,12 @@ var result = csvUtility.guessCSV(sample,{
 * `opts` (optional) - an array of possible linebreak characters (default: ["\r\n", "\r", "\n"])
 * `return` - the most possible linebreak characters
 
-#### csvUtility.guessSeparator(sample[,opts])
+#### csvUtility.guessSeparator(sample,[linebreak,opts])
 * `sample` - a sample string of the raw csv (auto-cropped to 100kb)
+* `linebreak` - the linebreak character to use (default: "\n")
 * `opts` (optional) - an array of possible separator characters (default: [",", "\t", "|", ";"])
 * `return` - the most possible separator characters
+
+### History
+1.0.0 Initial release
+1.0.1 BUGFIX: Corrected the documentation for csvUtility.guessSeparator. 
