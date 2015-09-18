@@ -1,6 +1,6 @@
 {
   "name": "csv-utility",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple package to guess the separator and linebreak characters for a csv file.",
   "main": "index.js",
   "scripts": {

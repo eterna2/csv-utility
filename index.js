@@ -5,16 +5,16 @@ module.exports = {
 };
 
 function guessCSV(line,opts){
-  var linebreak = guessLinebreak(line,opts);
-  var sep = guessSeparator(line,linebreak,opts);
+  opts = opts || {};
+  var linebreak = (Array.isArray(opts.linebreak))?guessLinebreak(line,opts.linebreak):opts.linebreak;
+  var sep = (Array.isArray(opts.sep))?guessSeparator(line,linebreak,opts.sep):opts.sep;
   return {sep:sep, linebreak:linebreak};
 }
 
 function guessSeparator(line,linebreak,opts){
   line = line.slice(0,102400);
   linebreak = linebreak || '\n';
-  opts = opts || {};
-  var choices = union([",", "\t", "|", ";"],opts.sep);
+  var choices = union([",", "\t", "|", ";"],opts);
 
   var res = choices[0], error = Number.MAX_VALUE;
   
@@ -49,8 +49,7 @@ function guessSeparator(line,linebreak,opts){
 
 function guessLinebreak(line,opts){
   line = line.slice(0,102400);
-  opts = opts || {};
-  var choices = union(["\r\n", "\r", "\n"],opts.linebreak);
+  var choices = union(["\r\n", "\r", "\n"],opts);
   var res = choices[0], score = 0;
   
   choices.forEach(function(sep,i){

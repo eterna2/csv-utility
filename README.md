@@ -1,5 +1,7 @@
 # csv-utility
 A simple package to guess the separator and linebreak characters for a "csv" file.
+[![NPM](https://nodei.co/npm/csv-utility.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/csv-utility/)
+[![NPM](https://nodei.co/npm-dl/csv-utility.png)](https://nodei.co/npm/csv-utility/)
 
 ### Installation
 #### Node
@@ -35,8 +37,8 @@ var result = csvUtility.guessCSV(sample,{
 #### csvUtility.guessCSV(sample[,opts])
 * `sample` - a sample string of the raw csv (auto-cropped to 100kb)
 * `opts` (optional) - a configuration to specify additional possible separator or linebreak characters
-  * `linebreak` - an array of possible linebreak characters (default: ["\r\n", "\r", "\n"])
-  * `sep` - an array of possible separator characters (default: [",", "\t", "|", ";"])
+  * `linebreak` - the linebreak characters to use OR an array of possible linebreak characters (default: ["\r\n", "\r", "\n"])
+  * `sep` - the separator character to use OR an array of possible separator characters (default: [",", "\t", "|", ";"])
 * `return` 
   * `linebreak` - the most possible linebreak characters
   * `sep` - the most possible separator characters
@@ -55,3 +57,4 @@ var result = csvUtility.guessCSV(sample,{
 ### History
 1.0.0 Initial release
 1.0.1 BUGFIX: Corrected the documentation for csvUtility.guessSeparator. 
+1.0.2 BUGFIX: Forgot to push the changes for the codes. 
