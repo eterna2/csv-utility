@@ -6,8 +6,8 @@ module.exports = {
 
 function guessCSV(line,opts){
   opts = opts || {};
-  var linebreak = (Array.isArray(opts.linebreak))?guessLinebreak(line,opts.linebreak):opts.linebreak;
-  var sep = (Array.isArray(opts.sep))?guessSeparator(line,linebreak,opts.sep):opts.sep;
+  var linebreak = (Array.isArray(opts.linebreak))?guessLinebreak(line,opts.linebreak):guessLinebreak(line,[opts.linebreak]);
+  var sep = (Array.isArray(opts.sep))?guessSeparator(line,linebreak,opts.sep):guessSeparator(line,linebreak,[opts.sep]);
   return {sep:sep, linebreak:linebreak};
 }
 
