@@ -1,7 +1,7 @@
 {
   "name": "csv-utility",
   "main": "./dist/csv-utility.min.js",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "homepage": "https://github.com/eterna2/csv-utility",
   "authors": [
     "eterna2 <eterna2@hotmail.com>"

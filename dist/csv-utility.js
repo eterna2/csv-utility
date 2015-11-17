@@ -44,7 +44,7 @@ function guessSeparator(line,linebreak,opts){
     var sumerror = res.map(function(d){ return (d-mean)*(d-mean); })
       .reduce(function(a,b){ return a+b; });
       
-    return sumerror;
+    return 0.01+Math.sqrt(sumerror)/sum;
   }
 }
 

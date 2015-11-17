@@ -59,3 +59,4 @@ var result = csvUtility.guessCSV(sample,{
 1.0.1 BUGFIX: Corrected the documentation for csvUtility.guessSeparator. 
 1.0.2 BUGFIX: Forgot to push the changes for the codes. 
 1.0.3 BUGFIX: Fixed bug at parsing non-array inputs. 
+1.0.4 UPDATE: Modified the error weights for the separator detection, to reduce noise from low frequency separator characters. 
